@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Menu, Mountain } from "lucide-react";
+import { Menu } from "lucide-react";
 import Logo from "../../public/images/logo.jpg";
 import Image from "next/image";
 export default function Navbar() {

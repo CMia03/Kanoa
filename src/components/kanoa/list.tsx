@@ -62,21 +62,15 @@ const listPages = () => {
             {items.map((item) => (
               <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/3">
                 <div className="max-w-full max-h-full">
-                  {" "}
-                  {/* Full size for the card container */}
                   <Card className="h-full">
-                    {" "}
-                    {/* Ensure card takes full height */}
                     <CardContent className="flex h-full items-center justify-center p-0">
-                      {" "}
-                      {/* No padding for full size */}
                       {item.imageURL && (
                         <img
                           src={item.imageURL.src}
-                          alt={`Image ${item.id}`} // Alternative text for accessibility
+                          alt={`Image ${item.id}`}
                           className="w-full h-full object-cover"
-                          width={1920} // Wider image size
-                          height={1080} // Adjusted height for a landscape orientation
+                          width={1920}
+                          height={1080}
                         />
                       )}
                     </CardContent>

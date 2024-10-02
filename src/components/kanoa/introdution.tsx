@@ -9,7 +9,6 @@ import {
   CardContent,
 } from "../../components/ui/card";
 import Logo from "../../../public/images/logo.jpg";
-import FondImage from "../../../public/images/menu.png";
 
 const introPages = () => {
   return (
