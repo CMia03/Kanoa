@@ -4,6 +4,7 @@ import FondImage from "../../public/images/menu.png";
 import { Button } from "@/components/ui/button";
 import { Typography } from "@/components/ui/Typography";
 import IntroPages from "@/components/kanoa/introdution";
+import ListPages from "@/components/kanoa/list";
 
 const welcomePage = () => {
   return (
@@ -30,6 +31,7 @@ const welcomePage = () => {
         {/* <IntroPages /> */}
       </div>
       <IntroPages />
+      <ListPages />
      
 
       {/* <div className="flex justify-center">
