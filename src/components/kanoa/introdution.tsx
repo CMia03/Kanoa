@@ -9,11 +9,16 @@ import {
   CardContent,
 } from "../../components/ui/card";
 import Logo from "../../../public/images/logo.jpg";
+import FondImage from "../../../public/images/menu.png";
 
 const introPages = () => {
   return (
     <>
-      <Card className="flex flex-col md:flex-row items-center md:items-start border-collapse mt-14 mb-14 ml-[20%] mr-[20%]">
+      {/* <div
+        className="relative flex flex-col items-center h-screen bg-cover bg-center"
+        style={{ backgroundImage: `url(${FondImage.src})` }}
+      > */}
+      <Card className="flex flex-col md:flex-row items-center md:items-start border-collapse mt-20 mb-14 ml-[20%] mr-[20%]">
         <div className="w-full md:w-1/2 p-4">
           <CardHeader className="flex">
             <CardTitle className="font-bold">
@@ -41,6 +46,7 @@ const introPages = () => {
           />
         </div>
       </Card>
+      {/* </div> */}
     </>
   );
 };

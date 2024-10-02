@@ -40,33 +40,43 @@ const listPages = () => {
   ];
   return (
     <>
-      <div className="flex items-center justify-center gap-8 ml-[10%] mr-[5%]">
-        <div className="max-w-md">
-          <h2 className="text-2xl font-bold mb-4">Your Text Title</h2>
-          <Typography variant="p" className="text-lg">
-            Chez nous, chaque plat est une invitation à un voyage sensoriel. Les
-            saveurs s&apos;entrelacent pour créer une expérience inoubliable, où
-            la fraîcheur des ingrédients et le savoir-faire s’unissent. Chaque
-            bouchée réveille des émotions, transformant un simple repas en un
-            moment de partage et de bonheur. Découvrez l&apos;essence de la
-            cuisine, où chaque assiette raconte une histoire et chaque saveur
-            évoque des souvenirs.
-          </Typography>
-        </div>
-        <Carousel className="w-full max-w-xl mx-auto items-center justify-center mb-20 mt-20">
+      <div className="items-center justify-center gap-8 ml-[10%] mr-[5%]">
+        <Typography variant="h1" className="text-4xl font-bold text-center mt-10 mb-10">Réveillez Vos Émotions avec Chaque Bouchée</Typography>
+        <Typography variant="p" className="text-lg text-center mt-10 mb-10 mr-[30%] ml-[30%]">
+          Chez nous, chaque plat est une invitation à un voyage sensoriel. Les
+          saveurs s&apos;entrelacent pour créer une expérience inoubliable, où
+          la fraîcheur des ingrédients et le savoir-faire s’unissent. Chaque
+          bouchée réveille des émotions, transformant un simple repas en un
+          moment de partage et de bonheur. Découvrez l&apos;essence de la
+          cuisine, où chaque assiette raconte une histoire et chaque saveur
+          évoque des souvenirs.
+        </Typography>
+
+        <Carousel
+          opts={{
+            align: "start",
+          }}
+          className="w-full h-screen max-w-full mx-auto items-center justify-center mb-0 mt-0" // Full width and height of the screen
+        >
           <CarouselContent>
-            {Array.from({ length: 5 }).map((_, index) => (
-              <CarouselItem key={index}>
-                <div className="p-1">
-                  <Card>
-                    <CardContent className="flex aspect-square items-center justify-center">
-                      {items[index]?.imageURL && (
+            {items.map((item) => (
+              <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/3">
+                <div className="max-w-full max-h-full">
+                  {" "}
+                  {/* Full size for the card container */}
+                  <Card className="h-full">
+                    {" "}
+                    {/* Ensure card takes full height */}
+                    <CardContent className="flex h-full items-center justify-center p-0">
+                      {" "}
+                      {/* No padding for full size */}
+                      {item.imageURL && (
                         <img
-                          src={items[index].imageURL.src}
-                          alt={`Image ${index + 1}`}
+                          src={item.imageURL.src}
+                          alt={`Image ${item.id}`} // Alternative text for accessibility
                           className="w-full h-full object-cover"
-                          width={500}
-                          height={500}
+                          width={1920} // Wider image size
+                          height={1080} // Adjusted height for a landscape orientation
                         />
                       )}
                     </CardContent>
