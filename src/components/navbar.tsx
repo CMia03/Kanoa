@@ -82,7 +82,7 @@ export default function Navbar() {
           href="/welcome"
           className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors ${
             activeLink === "/welcome"
-              ? "text-[#6E0B14] text-white"
+              ? "text-[#6E0B14]"
               : "bg-white hover:bg-gray-100 hover:text-gray-900"
           } focus:outline-none`}
           onClick={() => handleLinkClick("/welcome")}
@@ -94,7 +94,7 @@ export default function Navbar() {
           href="/about"
           className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors ${
             activeLink === "/about"
-              ? "text-[#6E0B14] text-white"
+              ? "text-[#6E0B14]"
               : "bg-white hover:bg-gray-100 hover:text-gray-900"
           } focus:outline-none`}
           onClick={() => handleLinkClick("/about")}
@@ -106,7 +106,7 @@ export default function Navbar() {
           href="/services"
           className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors ${
             activeLink === "/services"
-              ? "text-[#6E0B14] text-white"
+              ? "text-[#6E0B14]"
               : "bg-white hover:bg-gray-100 hover:text-gray-900"
           } focus:outline-none`}
           onClick={() => handleLinkClick("/services")}
@@ -118,7 +118,7 @@ export default function Navbar() {
           href="/contact"
           className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors ${
             activeLink === "/contact"
-              ? "text-[#6E0B14] text-white"
+              ? "text-[#6E0B14]"
               : "bg-white hover:bg-gray-100 hover:text-gray-900"
           } focus:outline-none`}
           onClick={() => handleLinkClick("/contact")}
