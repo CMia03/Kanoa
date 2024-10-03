@@ -31,7 +31,7 @@ const introPages = () => {
             <Typography variant="p">
               Kanoa, un restaurant niché à Itaosy Ambaniala, incarne
               l&apos;esprit de liberté à travers sa cuisine. Ce lieu est dédié à
-              la mémoire de Aina Rajaonah, un esprit créatif et passionné qui a
+              la mémoire de <b>Aina Rajaonah</b>, un esprit créatif et passionné qui a
               transformé notre art culinaire en un symbole de libération. Chez
               Konoa, chaque plat est une invitation à célébrer la liberté.
             </Typography>

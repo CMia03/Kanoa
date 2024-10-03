@@ -19,7 +19,7 @@ const welcomePage = () => {
         </Typography>
         <Typography
           variant="p"
-          className="text-lg mt-4 text-white z-10 mr- ml-52"
+          className="text-lg mt-4 text-white z-10 text-center mr-[30%] ml-[30%]"
         >
           Ce nouveau chapitre est dédié à la mémoire de Aina Rajaonah, un esprit
           créatif et passionné qui a fait de notre cuisine un symbole de
