@@ -1,6 +1,6 @@
 // components/Navbar.js
-'use client';
-import React, {useState, useEffect} from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
@@ -8,7 +8,7 @@ import { Menu } from "lucide-react";
 import Logo from "../../public/images/logo.jpg";
 import Image from "next/image";
 export default function Navbar() {
-  const [activeLink, setActiveLink] = useState('/welcome');
+  const [activeLink, setActiveLink] = useState("/welcome");
 
   useEffect(() => {
     // Met à jour le lien actif en fonction de l'URL actuelle
@@ -78,39 +78,55 @@ export default function Navbar() {
         <Image src={Logo} alt="logo" className="h-20 w-20" />
       </Link>
       <nav className="ml-auto hidden lg:flex gap-6">
-      <Link
-        href="/welcome"
-        className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors ${activeLink === '/welcome' ? 'text-[#6E0B14] text-white' : 'bg-white hover:bg-gray-100 hover:text-gray-900'} focus:outline-none`}
-        onClick={() => handleLinkClick('/welcome')}
-        prefetch={false}
-      >
-        Accueil
-      </Link>
-      <Link
-        href="/about"
-        className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors ${activeLink === '/about' ? 'text-[#6E0B14] text-white' : 'bg-white hover:bg-gray-100 hover:text-gray-900'} focus:outline-none`}
-        onClick={() => handleLinkClick('/about')}
-        prefetch={false}
-      >
-        À propos
-      </Link>
-      <Link
-        href="/services"
-        className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors ${activeLink === '/services' ? 'text-[#6E0B14] text-white' : 'bg-white hover:bg-gray-100 hover:text-gray-900'} focus:outline-none`}
-        onClick={() => handleLinkClick('/services')}
-        prefetch={false}
-      >
-        Services
-      </Link>
-      <Link
-        href="/contact"
-        className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors ${activeLink === '/contact' ? 'text-[#6E0B14] text-white' : 'bg-white hover:bg-gray-100 hover:text-gray-900'} focus:outline-none`}
-        onClick={() => handleLinkClick('/contact')}
-        prefetch={false}
-      >
-        Contact
-      </Link>
-    </nav>
+        <Link
+          href="/welcome"
+          className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors ${
+            activeLink === "/welcome"
+              ? "text-[#6E0B14] text-white"
+              : "bg-white hover:bg-gray-100 hover:text-gray-900"
+          } focus:outline-none`}
+          onClick={() => handleLinkClick("/welcome")}
+          prefetch={false}
+        >
+          Accueil
+        </Link>
+        <Link
+          href="/about"
+          className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors ${
+            activeLink === "/about"
+              ? "text-[#6E0B14] text-white"
+              : "bg-white hover:bg-gray-100 hover:text-gray-900"
+          } focus:outline-none`}
+          onClick={() => handleLinkClick("/about")}
+          prefetch={false}
+        >
+          À propos
+        </Link>
+        <Link
+          href="/services"
+          className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors ${
+            activeLink === "/services"
+              ? "text-[#6E0B14] text-white"
+              : "bg-white hover:bg-gray-100 hover:text-gray-900"
+          } focus:outline-none`}
+          onClick={() => handleLinkClick("/services")}
+          prefetch={false}
+        >
+          Services
+        </Link>
+        <Link
+          href="/contact"
+          className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors ${
+            activeLink === "/contact"
+              ? "text-[#6E0B14] text-white"
+              : "bg-white hover:bg-gray-100 hover:text-gray-900"
+          } focus:outline-none`}
+          onClick={() => handleLinkClick("/contact")}
+          prefetch={false}
+        >
+          Contact
+        </Link>
+      </nav>
     </header>
   );
 }
