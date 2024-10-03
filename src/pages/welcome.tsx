@@ -1,7 +1,6 @@
 import React from "react";
 import Layout from "@/components/layout";
 import FondImage from "../../public/images/menu.png";
-import { Button } from "@/components/ui/button";
 import { Typography } from "@/components/ui/Typography";
 import IntroPages from "@/components/kanoa/introdution";
 import ListPages from "@/components/kanoa/list";
@@ -25,9 +24,9 @@ const welcomePage = () => {
           créatif et passionné qui a fait de notre cuisine un symbole de
           liberté. Kanoa, un restaurant qui inspire la liberté.
         </Typography>
-        <Button className="text-white font-bold bg-transparent hover:bg-primary px-4 py-2 rounded-md mt-4 z-10">
+        {/* <Button className="text-white font-bold bg-transparent hover:bg-primary px-4 py-2 rounded-md mt-4 z-10">
           <Typography variant="p">Voir plus</Typography>
-        </Button>
+        </Button> */}
       </div>
       <IntroPages />
       <ListPages />

@@ -63,7 +63,7 @@ const aboutPage = () => {
             <div className="w-full md:w-1/2 p-4">
               <CardHeader className="flex">
                 <CardTitle className="font-bold">
-                  <Typography variant="h1" className="flex">
+                  <Typography variant="p" className="flex">
                     Kanoa Restaurant
                   </Typography>
                 </CardTitle>
@@ -115,7 +115,7 @@ const aboutPage = () => {
                     <item.icon size={25} strokeWidth={1} className="mr-2 text-purple-900" />
                     {item.title}
                   </CardTitle>
-                  <Typography variant="p" className="text-sm">
+                  <Typography variant="p" className="text-sm ml-8">
                     {item.info}
                   </Typography>
                 </CardHeader>

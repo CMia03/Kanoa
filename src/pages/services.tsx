@@ -2,8 +2,7 @@ import React from "react";
 import Layout from "@/components/layout";
 import { Typography } from "@/components/ui/Typography";
 import FondImage from "../../public/images/menu.png";
-import Livraison from "../../public/images/16.jpg";
-import Image from "next/image";
+import SlidePages from "@/components/kanoa/slideservices";
 
 const servicesPage = () => {
   return (
@@ -13,12 +12,18 @@ const servicesPage = () => {
         style={{ backgroundImage: `url(${FondImage.src})` }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="relative z-10 text-white">
+        <Typography
+          variant="h1"
+          className="text-4xl font-bold text-white z-10 mt-20"
+        >
+          Nos services
+        </Typography>
+        {/* <div className="relative z-10 text-white">
           <div className="mb-14 ml-[20%] mr-[20%]">
             <div className="flex flex-col md:flex-row items-center justify-between">
               <div className="md:w-1/2 mb-4 md:mb-0 md:pr-4">
                 <Typography variant="h1" className="text-4xl font-bold mt-52">
-                  Nos Services
+                 Livraisons
                 </Typography>
                 <Typography variant="p" className="text-white">
                   Le restaurant Kanoa propose désormais un service de livraison
@@ -29,7 +34,7 @@ const servicesPage = () => {
                   à votre porte.
                   <br />
                   <br />
-                  En plus de la livraison, Kanoa s’engage à maintenir la qualité
+                  En plus de la livraison, Kanoa s'engage à maintenir la qualité
                   et la fraîcheur de ses plats. Chaque commande est préparée
                   avec soin et livrée rapidement pour garantir que vous receviez
                   vos repas dans les meilleures conditions. Profitez de la
@@ -46,7 +51,9 @@ const servicesPage = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
+
+        <SlidePages />
       </div>
     </Layout>
   );
