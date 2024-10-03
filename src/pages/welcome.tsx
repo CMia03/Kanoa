@@ -28,24 +28,9 @@ const welcomePage = () => {
         <Button className="text-white font-bold bg-transparent hover:bg-primary px-4 py-2 rounded-md mt-4 z-10">
           <Typography variant="p">Voir plus</Typography>
         </Button>
-        {/* <IntroPages /> */}
       </div>
       <IntroPages />
       <ListPages />
-     
-
-      {/* <div className="flex justify-center">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d292.7179929877883!2d47.4867966602574!3d-18.917608891796494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e3!4m5!1s0x21f07e53385c1b07%3A0x1e15264a8a703672!2sAmbaniala%2C%20Tananarive!3m2!1d-18.9251926!2d47.4895028!4m5!1s0x21f5011306f10df7%3A0xd55b2c2d602e4c57!2sKanoa!3m2!1d-18.9175932!2d47.486831599999995!5e1!3m2!1sfr!2smg!4v1727870763544!5m2!1sfr!2smg" 
-                width="600" 
-                height="450" 
-                style={{ border: 0 }} 
-                allowFullScreen 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade" 
-                className="w-full max-w-lg h-96" // Ajout de classes pour rendre l'iframe responsive
-            ></iframe>
-        </div> */}
     </Layout>
   );
 };export default welcomePage;
