@@ -21,10 +21,10 @@ const introPages = () => {
         <div className="w-full md:w-1/2 p-4">
           <CardHeader className="flex">
             <CardTitle className="font-bold">
-              <Typography variant="h1" className="flex">
+              <span className="flex">
                 <Image src={Logo} alt="" className="h-20 w-20" /> &nbsp; Kanoa
                 Restaurant
-              </Typography>
+              </span>
             </CardTitle>
           </CardHeader>
           <CardContent>
