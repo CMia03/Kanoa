@@ -14,27 +14,21 @@ const InscriptionPages = () => {
       console.log("Nom:", nom);
       console.log("Prénom:", prenom);
       console.log("Email:", email);
-
-      setNom("");
-      setPrenom("");
-      setEmail("");
-
       const response = await axios.get("/api/user");
       console.log(response.data);
     //   alert(`Les inscrits sont ${JSON.stringify(response.data)}`);
     };
 
   const handleRegister = async () => {
-    console.log("Nom:", nom);
-    console.log("Prénom:", prenom);
-    console.log("Email:", email);
-
     try {
       const response = await axios.post("/api/register", {
         nom,
         prenom,
         email,
       });
+      setNom("");
+      setPrenom("");
+      setEmail("");
       console.log(response.data);
     } catch (error) {
       console.log(error);
@@ -86,7 +80,7 @@ const InscriptionPages = () => {
               required
             />
 
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-row gap-4 justify-start">
               <Button
                 className="mt-8 justify-center items-center"
                 onClick={handleRegister}
