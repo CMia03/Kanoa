@@ -44,34 +44,41 @@ const contactPage = () => {
         </Typography>
         <Typography variant="p" className="text-center">Faites de chaque repas une célébration ! Rejoignez-nous pour une expérience gastronomique unique</Typography>
         
-        <div className="flex flex-wrap gap-2 justify-center mt-3">
-          {cardItems.map((item) => (
-            <Card key={item.id} className="w-[500px]">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <item.icon size={25} strokeWidth={1} className="mr-2 text-purple-900" />
-                  {item.title}
-                </CardTitle>
-                <Typography variant="p" className="text-sm ml-8">
-                  {item.info}
-                </Typography>
-              </CardHeader>
-            </Card>
-          ))}
-        </div>
+        <div className="flex flex-col md:flex-row flex-wrap gap-4 justify-center mt-3">
+            {cardItems.map((item) => (
+              <Card
+                key={item.id}
+                className="w-full md:w-[calc(50%-1rem)] max-w-[500px]"
+              >
+                <CardHeader>
+                  <CardTitle className="flex items-center">
+                    <item.icon
+                      size={25}
+                      strokeWidth={1}
+                      className="mr-2 text-purple-900"
+                    />
+                    {item.title}
+                  </CardTitle>
+                  <Typography variant="p" className="text-sm ml-8">
+                    {item.info}
+                  </Typography>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
 
-        <div className="flex justify-center w-full mt-10 mb-[10%] h-[437px]">
-          <iframe
-            title="Google Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.311368384309!2d47.48424787611907!3d-18.917607207585082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21f5011306f10df7%3A0xd55b2c2d602e4c57!2sKanoa!5e0!3m2!1sfr!2smg!4v1727939022893!5m2!1sfr!2smg"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen={true}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </div>
+          <div className="flex justify-center w-full mt-10 mb-[10%] h-[437px]">
+            <iframe
+              title="Google Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.311368384309!2d47.48424787611907!3d-18.917607207585082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21f5011306f10df7%3A0xd55b2c2d602e4c57!2sKanoa!5e0!3m2!1sfr!2smg!4v1727939022893!5m2!1sfr!2smg"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
       </div>
     </div>
   </Layout>

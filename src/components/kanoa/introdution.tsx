@@ -17,7 +17,7 @@ const introPages = () => {
         className="relative flex flex-col items-center h-screen bg-cover bg-center"
         style={{ backgroundImage: `url(${FondImage.src})` }}
       > */}
-      <Card className="flex flex-col md:flex-row items-center md:items-start border-collapse mt-20 mb-14 ml-[20%] mr-[20%]">
+      <Card className="flex flex-col md:flex-col text-left md:items-center border-collapse mt-20 mb-14 mx-6">
         <div className="w-full md:w-1/2 p-4">
           <CardHeader className="flex">
             <CardTitle className="font-bold">

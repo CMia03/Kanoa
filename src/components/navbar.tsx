@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
+import { Typography } from "./ui/Typography";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import Logo from "../../public/images/logo.jpg";
@@ -29,7 +30,7 @@ export default function Navbar() {
             <span className="sr-only">Toggle navigation menu</span>
           </Button>
         </SheetTrigger>
-        <SheetContent side="left">
+        <SheetContent side="left" className="bg-white">
           {/* <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
             <Mountain className="h-6 w-6" />
             <span className="sr-only">Acme Inc</span>
@@ -41,31 +42,31 @@ export default function Navbar() {
           <div className="grid gap-2 py-6">
             <Link
               href="/welcome"
-              className="flex w-full items-center py-2 text-lg font-semibold"
+              className="flex w-full items-center py-2 font-semibold"
               prefetch={false}
             >
-              Acceuil
+              <Typography variant="p">Accueil</Typography>
             </Link>
             <Link
               href="/about"
-              className="flex w-full items-center py-2 text-lg font-semibold"
+              className="flex w-full items-center py-2 font-semibold"
               prefetch={false}
             >
-              A propos
+              <Typography variant="p">A propos</Typography>
             </Link>
             <Link
               href="/services"
-              className="flex w-full items-center py-2 text-lg font-semibold"
+              className="flex w-full items-center py-2 font-semibold"
               prefetch={false}
             >
-              Services
+              <Typography variant="p">Services</Typography>
             </Link>
             <Link
               href="/contact"
-              className="flex w-full items-center py-2 text-lg font-semibold"
+              className="flex w-full items-center py-2 font-semibold"
               prefetch={false}
             >
-              Contact
+              <Typography variant="p">Contact</Typography>
             </Link>
           </div>
         </SheetContent>
@@ -88,7 +89,7 @@ export default function Navbar() {
           onClick={() => handleLinkClick("/welcome")}
           prefetch={false}
         >
-          Accueil
+          <Typography variant="p">Accueil</Typography>
         </Link>
         <Link
           href="/about"
@@ -100,7 +101,7 @@ export default function Navbar() {
           onClick={() => handleLinkClick("/about")}
           prefetch={false}
         >
-          À propos
+          <Typography variant="p">A propos</Typography>
         </Link>
         <Link
           href="/services"
@@ -112,7 +113,7 @@ export default function Navbar() {
           onClick={() => handleLinkClick("/services")}
           prefetch={false}
         >
-          Services
+          <Typography variant="p">Services</Typography>
         </Link>
         <Link
           href="/contact"
@@ -124,7 +125,7 @@ export default function Navbar() {
           onClick={() => handleLinkClick("/contact")}
           prefetch={false}
         >
-          Contact
+          <Typography variant="p">Contact</Typography>
         </Link>
       </nav>
     </header>
