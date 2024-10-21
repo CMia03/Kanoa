@@ -4,20 +4,24 @@ import { Typography } from "@/components/ui/Typography";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import axios from "axios";
-
+import { useAuth } from "./context/AuthContext";
 const InscriptionPages = () => {
   const [nom, setNom] = useState("");
   const [prenom, setPrenom] = useState("");
   const [email, setEmail] = useState("");
+  const sessionAuth = useAuth();
 
-    const handleSubmit = async() => {
-      console.log("Nom:", nom);
-      console.log("Prénom:", prenom);
-      console.log("Email:", email);
-      const response = await axios.get("/api/user");
-      console.log(response.data);
+  const session = sessionAuth.data
+  console.log(session);
+
+  const handleSubmit = async () => {
+    console.log("Nom:", nom);
+    console.log("Prénom:", prenom);
+    console.log("Email:", email);
+    const response = await axios.get("/api/user");
+    console.log(response.data);
     //   alert(`Les inscrits sont ${JSON.stringify(response.data)}`);
-    };
+  };
 
   const handleRegister = async () => {
     try {
@@ -37,6 +41,7 @@ const InscriptionPages = () => {
 
   return (
     <>
+
       <div className="mx-4 items-center justify-center gap-8 text-start md:items-center">
         <Typography
           variant="h1"
@@ -56,6 +61,9 @@ const InscriptionPages = () => {
             </CardTitle>
           </CardHeader>
           <CardContent>
+            {session && session.user?.email && (
+              <Typography variant="p">Votre adresse email est {session.user.email}</Typography>
+            )}
             <Input
               type="text"
               className="mt-6"
