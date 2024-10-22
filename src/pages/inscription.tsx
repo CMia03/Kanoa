@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Typography } from "@/components/ui/Typography";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,17 +9,31 @@ const InscriptionPages = () => {
   const [nom, setNom] = useState("");
   const [prenom, setPrenom] = useState("");
   const [email, setEmail] = useState("");
+  const [inscrits, setInscrits] = useState([]);
   const sessionAuth = useAuth();
-
-  const session = sessionAuth.data
+  const session = sessionAuth.data;
   console.log(session);
+
+  useEffect(() => {
+    // Si l'email existe dans la session, l'initialiser dans l'état
+    if (session && session.user?.email) {
+      setEmail(session.user.email);
+    }
+    if(session && session.user?.name) {
+      setNom(session.user.name);
+    }
+  }, [session]);
 
   const handleSubmit = async () => {
     console.log("Nom:", nom);
     console.log("Prénom:", prenom);
     console.log("Email:", email);
     const response = await axios.get("/api/user");
-    console.log(response.data);
+     console.log(">>>>>>>>>>>>", response.data.users);
+    const result = response.data.users 
+    setInscrits(result)
+
+    
     //   alert(`Les inscrits sont ${JSON.stringify(response.data)}`);
   };
 
@@ -41,7 +55,6 @@ const InscriptionPages = () => {
 
   return (
     <>
-
       <div className="mx-4 items-center justify-center gap-8 text-start md:items-center">
         <Typography
           variant="h1"
@@ -61,9 +74,6 @@ const InscriptionPages = () => {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            {session && session.user?.email && (
-              <Typography variant="p">Votre adresse email est {session.user.email}</Typography>
-            )}
             <Input
               type="text"
               className="mt-6"
@@ -101,11 +111,26 @@ const InscriptionPages = () => {
               >
                 Liste des inscrits
               </Button>
+            
             </div>
+
+            {inscrits.length > 0 && (
+        <div className="mt-4">
+          <Typography variant="p">Liste des inscrits :</Typography>
+          <ul>
+  {inscrits.map((inscrit: { nom: string; prenom: string; email: string }, index: number) => (
+    <li key={index}>
+      {inscrit.nom} {inscrit.prenom} - {inscrit.email}
+    </li>
+  ))}
+</ul>
+
+        </div>
+      )}
+            
           </CardContent>
         </Card>
       </div>
     </>
   );
-};
-export default InscriptionPages;
+};export default InscriptionPages;

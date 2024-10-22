@@ -62,19 +62,18 @@ const AuthPages = () => {
                             </Button>
                         </div> <br />
 
-                        <Button onClick={() => signIn("google")}>
+                        <Button className="gap-3 mr-3" onClick={() => signIn("google")}>
                             Se Connectez avec Google     <Mail />
-                        </Button>
-                        <Button onClick={() => signIn("facebook")}>
-                            Se Connectez avec Facebook     <Mail />
+                        </Button> <br />
+                        <Button className="bg-blue-950 mt-5 hover:bg-blue-950" onClick={() => signIn("facebook")}>
+                            Se Connectez avec Facebook     <Facebook />
                         </Button>
 
-                        <div>
+                        {/* <div>
                             {sessionFacebook && sessionFacebook.user?.name && (
                                 <Typography variant="p">Vous êtes connecté en tant que {sessionFacebook.user.name}</Typography>
                             )}
-
-                        </div>
+                        </div> */}
                         {session && session.user?.name && (
                             <Typography variant="p">Vous êtes connecté en tant que {session.user.name}</Typography>
                         )}
