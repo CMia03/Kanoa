@@ -1,6 +1,7 @@
 // pages/api/auth/[...nextauth].ts
 import NextAuth, { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
+import FacebookProvider from "next-auth/providers/facebook";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -8,20 +9,22 @@ export const authOptions: NextAuthOptions = {
       clientId: process.env.GOOGLE_CLIENT_ID || '',
       clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
     }),
+    FacebookProvider({
+      clientId: process.env.FACEBOOK_CLIENT_ID!,
+      clientSecret: process.env.FACEBOOK_CLIENT_SECRET!,
+    }),
   ],
   session: {
     strategy: "jwt",
   },
   callbacks: {
     async jwt({ token, account, profile }) {
-      // Save the access token to the token object if it's a sign-in action
       if (account) {
         token.accessToken = account.access_token;
       }
       return token;
     },
     async session({ session, token }) {
-      // Attach the access token to the session object
       if (token) {
         return {
           ...session,
@@ -32,7 +35,7 @@ export const authOptions: NextAuthOptions = {
     }  },
   pages: {
     signIn: '/auth/signin',
-    error: '/auth/error', // Error page
+    error: '/auth/error', 
   },
 };
 

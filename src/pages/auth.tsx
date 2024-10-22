@@ -5,13 +5,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { signIn, signOut, useSession } from "next-auth/react";
 import axios from "axios";
-import { Mail } from 'lucide-react';
+import { Mail, Facebook } from 'lucide-react';
 
 
 const AuthPages = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const { data: session } = useSession();
+    const { data: sessionFacebook } = useSession();
 
     const handleSubmit = async () => {
         console.log("Email:", email);
@@ -64,6 +65,16 @@ const AuthPages = () => {
                         <Button onClick={() => signIn("google")}>
                             Se Connectez avec Google     <Mail />
                         </Button>
+                        <Button onClick={() => signIn("facebook")}>
+                            Se Connectez avec Facebook     <Mail />
+                        </Button>
+
+                        <div>
+                            {sessionFacebook && sessionFacebook.user?.name && (
+                                <Typography variant="p">Vous êtes connecté en tant que {sessionFacebook.user.name}</Typography>
+                            )}
+
+                        </div>
                         {session && session.user?.name && (
                             <Typography variant="p">Vous êtes connecté en tant que {session.user.name}</Typography>
                         )}
