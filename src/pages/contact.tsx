@@ -96,10 +96,6 @@ const contactPage = () => {
         </div>
       </div>
     </Layout>
-
-
-
-
   );
 };
 export default contactPage;
