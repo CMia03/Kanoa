@@ -52,7 +52,7 @@ export default function Navbar() {
               className="flex w-full items-center py-2 font-semibold"
               prefetch={false}
             >
-              <Typography variant="p">A propos</Typography>
+              <Typography variant="p">Nos menus</Typography>
             </Link>
             <Link
               href="/services"
@@ -71,10 +71,6 @@ export default function Navbar() {
           </div>
         </SheetContent>
       </Sheet>
-      {/* <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
-        <Mountain className="h-6 w-6" />
-        <span className="sr-only">Acme Inc</span>
-      </Link> */}
       <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
         <Image src={Logo} alt="logo" className="h-20 w-20" />
       </Link>
@@ -101,7 +97,7 @@ export default function Navbar() {
           onClick={() => handleLinkClick("/about")}
           prefetch={false}
         >
-          <Typography variant="p">A propos</Typography>
+          <Typography variant="p">Nos menus</Typography>
         </Link>
         <Link
           href="/services"

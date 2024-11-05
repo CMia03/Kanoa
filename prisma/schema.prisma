@@ -14,10 +14,21 @@ datasource db {
 }
 
 model user {
+<<<<<<< HEAD
   id    Int     @id @default(autoincrement())
   nom  String
   prenom String
   email String  @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+=======
+  id              Int      @id @default(autoincrement())
+  nom             String
+  prenom          String
+  email           String   @unique
+  password        String
+  confirmPassword String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+>>>>>>> 4c9fde2568196b6d20132d20fae1374390da4d01
 }

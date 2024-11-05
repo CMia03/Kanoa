@@ -13,39 +13,35 @@ import Logo from "../../../public/images/logo.jpg";
 const introPages = () => {
   return (
     <>
-      {/* <div
-        className="relative flex flex-col items-center h-screen bg-cover bg-center"
-        style={{ backgroundImage: `url(${FondImage.src})` }}
-      > */}
-      <Card className="flex flex-col md:flex-col text-left md:items-center border-collapse mt-20 mb-14 mx-6">
-        <div className="w-full md:w-1/2 p-4">
+      <Card className="flex flex-col md:flex-row text-left md:items-center border-collapse mt-20 mb-14 mx-6">
+        <div className="w-full md:w-1/2 p-4 flex justify-center order-1 md:order-2">
+          <Image
+            src={portrait}
+            alt="Portrait"
+            className="w-32 h-32 md:w-64 md:h-64 rounded-full object-cover"
+          />
+        </div>
+        <div className="w-full md:w-1/2 p-4 order-2 md:order-1">
           <CardHeader className="flex">
-            <CardTitle className="font-bold">
+            <CardTitle className="">
               <span className="flex">
-                <Image src={Logo} alt="" className="h-20 w-20" /> &nbsp; Kanoa
-                Restaurant
+                <Image src={Logo} alt="" className="h-20 w-20" /> &nbsp; <Typography variant="p">&nbsp;Kanoa Restaurant</Typography>
+
               </span>
             </CardTitle>
           </CardHeader>
           <CardContent>
             <Typography variant="p">
-              Kanoa, un restaurant niché à Itaosy Ambaniala, incarne
-              l&apos;esprit de liberté à travers sa cuisine. Ce lieu est dédié à
-              la mémoire de <b>Aina Rajaonah</b>, un esprit créatif et passionné qui a
-              transformé notre art culinaire en un symbole de libération. Chez
-              Konoa, chaque plat est une invitation à célébrer la liberté.
+              Kanoa, un restaurant à Itaosy Ambaniala,
+              incarne l&apos;esprit de liberté à travers sa cuisine.
+              Ce lieu rend hommage à <b>Aina Rajaonah</b>,
+              un créatif passionné qui a transformé notre art culinaire en symbole de libération.
+              Chaque plat chez Kanoa invite à célébrer la liberté.
+
             </Typography>
           </CardContent>
         </div>
-        <div className="w-full md:w-1/2 p-4 flex justify-center">
-          <Image
-            src={portrait}
-            alt="Portrait"
-            className="w-64 h-64 rounded-full object-cover"
-          />
-        </div>
       </Card>
-      {/* </div> */}
     </>
   );
 };
