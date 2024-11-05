@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '@/components/layout';
 import { Typography } from '@/components/ui/Typography';
-import { LucideIcon, MapPin, Phone } from "lucide-react";
+import { LucideIcon, MapPin, Phone, Facebook } from "lucide-react";
 import {
   Card,
   CardHeader,
@@ -14,6 +14,7 @@ type CardItem = {
   title: string;
   icon: LucideIcon;
   info: string;
+  url?: string;
 };
 
 const contactPage = () => {
@@ -21,7 +22,7 @@ const contactPage = () => {
     {
       id: 1,
       icon: Phone,
-      title: "Numéro de téléphone",
+      title: "Contact",
       info: "032 28 237 98",
     },
     {
@@ -30,25 +31,36 @@ const contactPage = () => {
       icon: MapPin,
       info: "Ambaniala Itaosy",
     },
+    {
+      id: 3,
+      title: "Facebook",
+      icon: Facebook,
+      info: "Kanoa",
+      url: "https://www.facebook.com/profile.php?id=61554626344330"
+    }
+
   ];
   return (
     <Layout>
-    <div
-      className="relative flex flex-col items-center h-full bg-cover bg-center"
-      style={{ backgroundImage: `url(${FondImage.src})` }}
-    >
-      <div className="absolute inset-0 bg-black opacity-50"></div>
-      <div className="relative z-10 text-white mr-[10%] ml-[10%] mt-20">
-        <Typography variant="h1" className="my-[30px] text-center">
-          Nos coordonnées
-        </Typography>
-        <Typography variant="p" className="text-center">Faites de chaque repas une célébration ! Rejoignez-nous pour une expérience gastronomique unique</Typography>
-        
-        <div className="flex flex-col md:flex-row flex-wrap gap-4 justify-center mt-3">
-            {cardItems.map((item) => (
+      <div
+        className="relative flex flex-col items-center h-full bg-cover bg-center"
+        style={{ backgroundImage: `url(${FondImage.src})` }}
+      >
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="relative z-10 text-white mr-[10%] ml-[10%] mt-20 w-[80%]">
+          <Typography variant="h1" className="my-[30px] text-left md:text-center">
+            Nos coordonnées
+          </Typography>
+          <Typography variant="p" className="text-left md:text-center">
+            Faites de chaque repas une célébration ! Rejoignez-nous pour une expérience gastronomique unique.
+          </Typography>
+
+
+          <div className="flex flex-col md:flex-row flex-wrap justify-between gap-4 mt-6">
+            {cardItems.map(item => (
               <Card
                 key={item.id}
-                className="w-full md:w-[calc(50%-1rem)] max-w-[500px]"
+                className="w-full md:w-[calc(50%-1rem)] max-w-[500px] flex-1"
               >
                 <CardHeader>
                   <CardTitle className="flex items-center">
@@ -67,6 +79,8 @@ const contactPage = () => {
             ))}
           </div>
 
+
+
           <div className="flex justify-center w-full mt-10 mb-[10%] h-[437px]">
             <iframe
               title="Google Map"
@@ -79,13 +93,13 @@ const contactPage = () => {
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
+        </div>
       </div>
-    </div>
-  </Layout>
+    </Layout>
 
 
-  
-   
+
+
   );
 };
 export default contactPage;
