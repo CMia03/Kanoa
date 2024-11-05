@@ -32,11 +32,12 @@ const introPages = () => {
           </CardHeader>
           <CardContent>
             <Typography variant="p">
-              Kanoa, un restaurant à Itaosy Ambaniala,
-              incarne l'esprit de liberté à travers sa cuisine.
-              Ce lieu rend hommage à <b>Aina Rajaonah</b>,
-              un créatif passionné qui a transformé notre art culinaire en symbole de libération.
-              Chaque plat chez Kanoa invite à célébrer la liberté.
+            Kanoa, un restaurant à Itaosy Ambaniala,
+incarne l&apos;esprit de liberté à travers sa cuisine.
+Ce lieu rend hommage à <b>Aina Rajaonah</b>,
+un créatif passionné qui a transformé notre art culinaire en symbole de libération.
+Chaque plat chez Kanoa invite à célébrer la liberté.
+
             </Typography>
           </CardContent>
         </div>

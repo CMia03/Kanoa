@@ -1,23 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Typography } from "@/components/ui/Typography";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import axios from "axios";
-import { useAuth } from "./context/AuthContext";
 import { FieldValues, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Table, TableBody, TableCell, TableHead, TableHeader } from "@/components/ui/table";
 import createContactFormSchema from "./validator/formValidator";
 import bcrypt from 'bcryptjs';
-import UserHandler from "./api/user";
 
 
 const InscriptionPages = () => {
 
  const [message, setMessage] = useState("");
   const schema = createContactFormSchema();
-  const [visible, setVisible] = useState(false);
 
   const {
     register,
@@ -29,17 +26,6 @@ const InscriptionPages = () => {
   });
 
   const [inscrits, setInscrits] = useState([]);
-  const sessionAuth = useAuth();
-  const session = sessionAuth.data;
-
-  // useEffect(() => {
-  //   if (session && session.user?.email) {
-  //     setEmail(session.user.email);
-  //   }
-  //   if (session && session.user?.name) {
-  //     setNom(session.user.name);
-  //   }
-  // }, [session]);
 
   const handleList = async () => {
     const response = await axios.get("/api/user");

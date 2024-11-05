@@ -1,11 +1,11 @@
-// context/AuthContext.tsx
 import { createContext, useContext } from "react";
 import { useSession } from "next-auth/react";
-
-const AuthContext = createContext<any>(null);
+import type { Session } from "next-auth";
+// Typage du contexte
+const AuthContext = createContext<Session | null>(null);
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const session = useSession();
+    const { data: session } = useSession();
 
     return (
         <AuthContext.Provider value={session}>

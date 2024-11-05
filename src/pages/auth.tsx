@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Typography } from "@/components/ui/Typography";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { signIn, signOut, useSession } from "next-auth/react";
-import axios from "axios";
 import { Mail, Facebook } from 'lucide-react';
 
 
@@ -12,7 +11,6 @@ const AuthPages = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const { data: session } = useSession();
-    const { data: sessionFacebook } = useSession();
 
     const handleSubmit = async () => {
         console.log("Email:", email);

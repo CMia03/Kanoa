@@ -4,8 +4,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import imageA from "../../../public/images/1.jpg";
@@ -70,7 +68,7 @@ const listPages = () => {
         >
           <CarouselContent>
             {items.map((item) => (
-              <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/3 sm:basis-1/1">
+              <CarouselItem key={item.id}>
                 <div className="flex justify-center">
                   <Card className="w-full max-w-xs md:max-w-md lg:max-w-lg">
                     <CardContent className="flex items-center justify-center p-0">
@@ -78,7 +76,7 @@ const listPages = () => {
                         <img
                           src={item.imageURL.src}
                           alt=""
-                          className="w-full h-auto object-cover" // Ensure images are responsive
+                          className="w-full h-auto object-cover"
                         />
                       )}
                     </CardContent>
@@ -87,8 +85,6 @@ const listPages = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          {/* <CarouselPrevious />
-  <CarouselNext /> */}
         </Carousel>
 
       </div>

@@ -4,13 +4,12 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+ 
 } from "@/components/ui/carousel";
 import event from "../../../public/images/event.jpg";
 import livraison from "../../../public/images/16.jpg";
 import { Typography } from "../ui/Typography";
-import Image, { StaticImageData } from "next/image";
+import { StaticImageData } from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -76,8 +75,6 @@ const slidePages = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          {/* <CarouselPrevious />
-          <CarouselNext /> */}
         </Carousel>
     </div>
   );
