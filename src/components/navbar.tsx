@@ -52,7 +52,7 @@ export default function Navbar() {
               className="flex w-full items-center py-2 font-semibold"
               prefetch={false}
             >
-              <Typography variant="p">A propos</Typography>
+              <Typography variant="p">Nos menus</Typography>
             </Link>
             <Link
               href="/services"
@@ -101,7 +101,7 @@ export default function Navbar() {
           onClick={() => handleLinkClick("/about")}
           prefetch={false}
         >
-          <Typography variant="p">A propos</Typography>
+          <Typography variant="p">Nos menus</Typography>
         </Link>
         <Link
           href="/services"

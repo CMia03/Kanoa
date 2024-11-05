@@ -83,17 +83,26 @@ const aboutPage = () => {
             </span>
           </Typography>
 
-          <Card className="flex flex-row items-start border-collapse mt-20 mb-14">
-            <div className="w-1/2 p-2 md:p-4">
+
+          <Card className="flex flex-col md:flex-row text-left md:items-center border-collapse mt-20 mb-14 mx-6">
+            <div className="w-full md:w-1/2 p-4 flex justify-center order-1 md:order-2">
+              <Image
+                src={portraitRobo}
+                alt="Portrait"
+                className="w-32 h-32 md:w-64 md:h-64 rounded-full object-cover"
+              />
+            </div>
+            <div className="w-full md:w-1/2 p-4 order-2 md:order-1">
               <CardHeader className="flex">
-                <CardTitle className="font-bold">
-                  <Typography variant="p" className="flex text-sm md:text-base">
-                    Kanoa Restaurant
-                  </Typography>
+                <CardTitle className="">
+                  <span className="flex">
+                    <Image src={Logo} alt="" className="h-20 w-20" /> &nbsp; <Typography variant="p">&nbsp;Kanoa Restaurant</Typography>
+
+                  </span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <Typography variant="p" className="text-xs md:text-base">
+                <Typography variant="p">
                   Kanoa, un restaurant situé à Itaosy Ambaniala, incarne
                   l&apos;esprit de liberté à travers sa cuisine. Ce lieu est
                   dédié à la mémoire de <b>Aina Rajaonah</b>, un esprit créatif
@@ -102,13 +111,6 @@ const aboutPage = () => {
                   invitation à célébrer la liberté.
                 </Typography>
               </CardContent>
-            </div>
-            <div className="w-1/2 p-2 md:p-4 flex justify-center items-center">
-              <Image
-                src={portraitRobo}
-                alt="Portrait"
-                className="md:w-64 md:h-64 rounded-full object-cover"
-              />
             </div>
           </Card>
 
