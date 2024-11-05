@@ -12,8 +12,7 @@ import { Typography } from "../ui/Typography";
 import { StaticImageData } from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import Autoplay from "embla-carousel-autoplay";
-
-// import Autoplay from "embla-carousel-autoplay";
+import NextImage from 'next/image';
 
 export type ItemType = {
   id: number;
@@ -59,7 +58,7 @@ const slidePages = () => {
 
                         <Typography variant="p" className="text-start md:text-center">{item.description}</Typography>
                       {item.imageURL && (
-                        <img
+                        <NextImage
                           src={item.imageURL.src}
                           alt=""
                           width={200}

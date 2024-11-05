@@ -13,6 +13,7 @@ import imageD from "../../../public/images/4.jpg";
 import { Typography } from "../ui/Typography";
 import { StaticImageData } from "next/image";
 import Autoplay from "embla-carousel-autoplay";
+import NextImage from 'next/image';
 
 
 export type ItemType = {
@@ -73,10 +74,13 @@ const listPages = () => {
                   <Card className="w-full max-w-xs md:max-w-md lg:max-w-lg">
                     <CardContent className="flex items-center justify-center p-0">
                       {item.imageURL && (
-                        <img
+                        <NextImage
                           src={item.imageURL.src}
                           alt=""
                           className="w-full h-auto object-cover"
+                          width={500}
+                          height={300}
+                          layout="responsive" // ou `fill` si vous souhaitez que l'image prenne tout l'espace du conteneur
                         />
                       )}
                     </CardContent>
