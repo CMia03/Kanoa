@@ -17,7 +17,21 @@ const AuthPages = () => {
     const handleSubmit = async () => {
         console.log("Email:", email);
         console.log("Mot de passe:", password);
-
+        const response = await fetch('/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+        });
+        const data = await response.json();
+        if (response.ok) {
+            console.log('Login successful:', data.token);
+            setEmail("");
+            setPassword("");
+        } else {
+            console.error('Login failed:', data.message);
+        }
     };
     return (
         <>
@@ -28,11 +42,11 @@ const AuthPages = () => {
                 >
                     Connectez-vous
                 </Typography>
-                <Card className="">
+                <Card className="border-blue-700">
                     <CardContent>
                         <Input
                             type="email"
-                            className="mt-6"
+                            className="mt-6 border-gray-400"
                             placeholder="Email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -41,8 +55,8 @@ const AuthPages = () => {
                         />
                         <Input
                             type="password"
-                            className="mt-6"
-                            placeholder="identifiant"
+                            className="mt-6 border-gray-400"
+                            placeholder="Identifiant"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
