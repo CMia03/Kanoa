@@ -71,10 +71,6 @@ export default function Navbar() {
           </div>
         </SheetContent>
       </Sheet>
-      {/* <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
-        <Mountain className="h-6 w-6" />
-        <span className="sr-only">Acme Inc</span>
-      </Link> */}
       <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
         <Image src={Logo} alt="logo" className="h-20 w-20" />
       </Link>
